@@ -1,0 +1,50 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeYRjXGcYJhzHBPelrBvZiRLRP7nom/q2",
+    "phone": "+1234567890",
+    "isAdmin": false,
+    "shippingAddress": {
+      "address": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "isActive": true,
+    "emailVerified": true
+  },
+  {
+    "name": "Admin User",
+    "email": "admin@example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeYRjXGcYJhzHBPelrBvZiRLRP7nom/q2",
+    "phone": "+1234567891",
+    "isAdmin": true,
+    "shippingAddress": {
+      "address": "456 Admin Ave",
+      "city": "San Francisco",
+      "state": "CA",
+      "postalCode": "94102",
+      "country": "USA"
+    },
+    "isActive": true,
+    "emailVerified": true
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeYRjXGcYJhzHBPelrBvZiRLRP7nom/q2",
+    "phone": "+1234567892",
+    "isAdmin": false,
+    "shippingAddress": {
+      "address": "789 Oak St",
+      "city": "Chicago",
+      "state": "IL",
+      "postalCode": "60601",
+      "country": "USA"
+    },
+    "isActive": true,
+    "emailVerified": true
+  }
+]

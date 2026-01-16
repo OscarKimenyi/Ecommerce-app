@@ -1,0 +1,52 @@
+[
+  {
+    "user": { "$oid": "507f1f77bcf86cd799439011" },
+    "items": [
+      {
+        "product": { "$oid": "507f1f77bcf86cd799439030" },
+        "name": "iPhone 15 Pro",
+        "image": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
+        "price": 899.99,
+        "quantity": 1,
+        "itemTotal": 899.99
+      },
+      {
+        "product": { "$oid": "507f1f77bcf86cd799439033" },
+        "name": "Nike Air Max 270",
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+        "price": 149.99,
+        "quantity": 1,
+        "itemTotal": 149.99
+      }
+    ],
+    "totalItems": 2,
+    "totalPrice": 1049.98,
+    "lastUpdated": { "$date": "2024-01-26T14:30:00.000Z" },
+    "expiresAt": { "$date": "2024-02-02T14:30:00.000Z" }
+  },
+  {
+    "user": { "$oid": "507f1f77bcf86cd799439013" },
+    "items": [
+      {
+        "product": { "$oid": "507f1f77bcf86cd799439034" },
+        "name": "Levi's 501 Original Jeans",
+        "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500",
+        "price": 69.99,
+        "quantity": 2,
+        "itemTotal": 139.98
+      },
+      {
+        "product": { "$oid": "507f1f77bcf86cd799439031" },
+        "name": "Samsung Galaxy S23",
+        "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500",
+        "price": 749.99,
+        "quantity": 1,
+        "itemTotal": 749.99
+      }
+    ],
+    "totalItems": 3,
+    "totalPrice": 889.97,
+    "lastUpdated": { "$date": "2024-01-26T15:45:00.000Z" },
+    "expiresAt": { "$date": "2024-02-02T15:45:00.000Z" }
+  }
+]

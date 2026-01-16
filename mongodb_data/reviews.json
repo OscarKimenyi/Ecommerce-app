@@ -1,0 +1,83 @@
+[
+  {
+    "product": { "$oid": "507f1f77bcf86cd799439030" },
+    "user": { "$oid": "507f1f77bcf86cd799439011" },
+    "rating": 5,
+    "title": "Amazing phone!",
+    "comment": "The camera is incredible and battery life lasts all day. Worth every penny!",
+    "images": [
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500"
+    ],
+    "verifiedPurchase": true,
+    "likes": 45,
+    "dislikes": 2,
+    "isApproved": true,
+    "createdAt": { "$date": "2024-01-19T14:30:00.000Z" },
+    "updatedAt": { "$date": "2024-01-19T14:30:00.000Z" }
+  },
+  {
+    "product": { "$oid": "507f1f77bcf86cd799439030" },
+    "user": { "$oid": "507f1f77bcf86cd799439013" },
+    "rating": 4,
+    "title": "Great but expensive",
+    "comment": "Love the phone but the price is quite high. Camera is fantastic though.",
+    "verifiedPurchase": true,
+    "likes": 32,
+    "dislikes": 5,
+    "isApproved": true,
+    "createdAt": { "$date": "2024-01-21T11:20:00.000Z" },
+    "updatedAt": { "$date": "2024-01-21T11:20:00.000Z" }
+  },
+  {
+    "product": { "$oid": "507f1f77bcf86cd799439031" },
+    "user": { "$oid": "507f1f77bcf86cd799439013" },
+    "rating": 5,
+    "title": "Best Android phone!",
+    "comment": "Super fast, great camera, and the battery lasts forever. Love it!",
+    "verifiedPurchase": true,
+    "likes": 28,
+    "dislikes": 1,
+    "isApproved": true,
+    "createdAt": { "$date": "2024-01-22T09:15:00.000Z" },
+    "updatedAt": { "$date": "2024-01-22T09:15:00.000Z" }
+  },
+  {
+    "product": { "$oid": "507f1f77bcf86cd799439033" },
+    "user": { "$oid": "507f1f77bcf86cd799439011" },
+    "rating": 5,
+    "title": "Most comfortable shoes ever",
+    "comment": "I walk 10km daily and these are the most comfortable shoes I've owned.",
+    "verifiedPurchase": true,
+    "likes": 67,
+    "dislikes": 0,
+    "isApproved": true,
+    "createdAt": { "$date": "2024-01-23T16:45:00.000Z" },
+    "updatedAt": { "$date": "2024-01-23T16:45:00.000Z" }
+  },
+  {
+    "product": { "$oid": "507f1f77bcf86cd799439034" },
+    "user": { "$oid": "507f1f77bcf86cd799439013" },
+    "rating": 4,
+    "title": "Classic fit",
+    "comment": "True to size, comfortable, and great quality. Would buy again.",
+    "verifiedPurchase": true,
+    "likes": 41,
+    "dislikes": 3,
+    "isApproved": true,
+    "createdAt": { "$date": "2024-01-24T13:20:00.000Z" },
+    "updatedAt": { "$date": "2024-01-24T13:20:00.000Z" }
+  },
+  {
+    "product": { "$oid": "507f1f77bcf86cd799439032" },
+    "user": { "$oid": "507f1f77bcf86cd799439011" },
+    "rating": 5,
+    "title": "Perfect protection",
+    "comment": "Saved my phone from multiple drops. Slim design but great protection.",
+    "verifiedPurchase": true,
+    "likes": 23,
+    "dislikes": 0,
+    "isApproved": true,
+    "createdAt": { "$date": "2024-01-20T10:10:00.000Z" },
+    "updatedAt": { "$date": "2024-01-20T10:10:00.000Z" }
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "order": { "$oid": "507f1f77bcf86cd799439040" },
+    "user": { "$oid": "507f1f77bcf86cd799439011" },
+    "paymentMethod": "credit_card",
+    "paymentGateway": "stripe",
+    "transactionId": "txn_7a8b9c0d1e2f",
+    "amount": 1155.46,
+    "currency": "USD",
+    "status": "succeeded",
+    "gatewayResponse": {
+      "id": "ch_1KXy2t2eZvKYlo2C9GpJ6p8Q",
+      "object": "charge",
+      "amount": 115546,
+      "currency": "usd",
+      "status": "succeeded",
+      "paid": true,
+      "payment_method": "card_1KXy2s2eZvKYlo2C3n6p8Q"
+    },
+    "refunds": [],
+    "createdAt": { "$date": "2024-01-15T11:00:00.000Z" },
+    "updatedAt": { "$date": "2024-01-15T11:00:00.000Z" }
+  },
+  {
+    "order": { "$oid": "507f1f77bcf86cd799439041" },
+    "user": { "$oid": "507f1f77bcf86cd799439013" },
+    "paymentMethod": "paypal",
+    "paymentGateway": "paypal",
+    "transactionId": "PAYPAL-9K8J7H6G5F4",
+    "amount": 281.57,
+    "currency": "USD",
+    "status": "succeeded",
+    "gatewayResponse": {
+      "id": "5MG55053RH699112W",
+      "status": "COMPLETED",
+      "payer": {
+        "email_address": "jane@example.com"
+      }
+    },
+    "refunds": [],
+    "createdAt": { "$date": "2024-01-20T15:30:00.000Z" },
+    "updatedAt": { "$date": "2024-01-20T15:30:00.000Z" }
+  },
+  {
+    "order": { "$oid": "507f1f77bcf86cd799439042" },
+    "user": { "$oid": "507f1f77bcf86cd799439011" },
+    "paymentMethod": "mobile_money",
+    "paymentGateway": "momo",
+    "transactionId": "MOMO-20240125-ABC123",
+    "amount": 141.98,
+    "currency": "USD",
+    "status": "pending",
+    "gatewayResponse": {
+      "status": "PENDING",
+      "message": "Waiting for customer confirmation"
+    },
+    "refunds": [],
+    "createdAt": { "$date": "2024-01-25T09:45:00.000Z" },
+    "updatedAt": { "$date": "2024-01-25T09:45:00.000Z" }
+  }
+]

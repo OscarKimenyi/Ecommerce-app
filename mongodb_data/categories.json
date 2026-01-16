@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Electronics",
+    "slug": "electronics",
+    "description": "Electronic devices and gadgets",
+    "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500",
+    "isActive": true,
+    "displayOrder": 1
+  },
+  {
+    "name": "Clothing",
+    "slug": "clothing",
+    "description": "Fashion and apparel",
+    "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500",
+    "isActive": true,
+    "displayOrder": 2
+  },
+  {
+    "name": "Home & Garden",
+    "slug": "home-garden",
+    "description": "Home improvement and garden supplies",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500",
+    "isActive": true,
+    "displayOrder": 3
+  },
+  {
+    "name": "Books",
+    "slug": "books",
+    "description": "Books and magazines",
+    "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500",
+    "isActive": true,
+    "displayOrder": 4
+  },
+  {
+    "name": "Sports",
+    "slug": "sports",
+    "description": "Sports equipment",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "isActive": true,
+    "displayOrder": 5
+  }
+]
