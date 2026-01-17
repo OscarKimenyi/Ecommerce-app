@@ -4,16 +4,17 @@ import Rating from "./Rating";
 
 const ProductCard = ({ product }) => {
   return (
-    <Card className="my-3 p-3 rounded">
+    <Card className="my-3 p-3 rounded product-card">
       <Link to={`/product/${product._id}`}>
         <Card.Img
-          src={product.images[0] || "https://via.placeholder.com/300"}
+          src={product.image}
           variant="top"
+          style={{ height: "200px", objectFit: "cover" }}
         />
       </Link>
 
       <Card.Body>
-        <Link to={`/product/${product._id}`}>
+        <Link to={`/product/${product._id}`} className="text-decoration-none">
           <Card.Title as="div" className="product-title">
             <strong>{product.name}</strong>
           </Card.Title>
@@ -26,15 +27,15 @@ const ProductCard = ({ product }) => {
           />
         </Card.Text>
 
-        <Card.Text as="h3">${product.price}</Card.Text>
+        <Card.Text as="h3" className="mt-2">
+          ${product.price.toFixed(2)}
+        </Card.Text>
 
-        <Button
-          variant="primary"
-          className="btn-block"
-          disabled={product.stock === 0}
-        >
-          {product.stock > 0 ? "Add to Cart" : "Out of Stock"}
-        </Button>
+        <Link to={`/product/${product._id}`}>
+          <Button variant="primary" className="btn-block mt-2">
+            View Details
+          </Button>
+        </Link>
       </Card.Body>
     </Card>
   );
