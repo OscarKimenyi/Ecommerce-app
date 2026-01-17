@@ -1,22 +1,46 @@
-const Rating = ({ value, text, color = "#f8e825" }) => {
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+
+const Rating = ({ value, text }) => {
   return (
     <div className="rating">
       <span>
-        {[1, 2, 3, 4, 5].map((index) => (
-          <i
-            key={index}
-            style={{ color }}
-            className={
-              value >= index
-                ? "fas fa-star"
-                : value >= index - 0.5
-                ? "fas fa-star-half-alt"
-                : "far fa-star"
-            }
-          ></i>
-        ))}
+        {value >= 1 ? (
+          <FaStar />
+        ) : value >= 0.5 ? (
+          <FaStarHalfAlt />
+        ) : (
+          <FaRegStar />
+        )}
+        {value >= 2 ? (
+          <FaStar />
+        ) : value >= 1.5 ? (
+          <FaStarHalfAlt />
+        ) : (
+          <FaRegStar />
+        )}
+        {value >= 3 ? (
+          <FaStar />
+        ) : value >= 2.5 ? (
+          <FaStarHalfAlt />
+        ) : (
+          <FaRegStar />
+        )}
+        {value >= 4 ? (
+          <FaStar />
+        ) : value >= 3.5 ? (
+          <FaStarHalfAlt />
+        ) : (
+          <FaRegStar />
+        )}
+        {value >= 5 ? (
+          <FaStar />
+        ) : value >= 4.5 ? (
+          <FaStarHalfAlt />
+        ) : (
+          <FaRegStar />
+        )}
       </span>
-      <span>{text && ` ${text}`}</span>
+      <span className="ms-2">{text}</span>
     </div>
   );
 };
