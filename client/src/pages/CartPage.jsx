@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import {
   Row,
@@ -23,38 +23,42 @@ const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
+    const addToCart = async (id, quantity) => {
+      try {
+        const { data } = await getProductById(id);
+        const item = {
+          product: data._id,
+          name: data.name,
+          image: data.images?.[0] || "https://via.placeholder.com/300",
+          price: data.price,
+          stock: data.stock,
+          qty: quantity,
+        };
+
+        setCartItems((prevItems) => {
+          const existItem = prevItems.find((x) => x.product === item.product);
+
+          let updatedItems;
+          if (existItem) {
+            updatedItems = prevItems.map((x) =>
+              x.product === existItem.product ? item : x
+            );
+          } else {
+            updatedItems = [...prevItems, item];
+          }
+
+          localStorage.setItem("cartItems", JSON.stringify(updatedItems));
+          return updatedItems;
+        });
+      } catch (error) {
+        console.error("Error adding to cart:", error);
+      }
+    };
+
     if (productId) {
       addToCart(productId, qty);
     }
   }, [productId, qty]);
-
-  const addToCart = async (id, qty) => {
-    try {
-      const { data } = await getProductById(id);
-      const item = {
-        product: data._id,
-        name: data.name,
-        image: data.images[0],
-        price: data.price,
-        stock: data.stock,
-        qty,
-      };
-
-      const existItem = cartItems.find((x) => x.product === item.product);
-
-      if (existItem) {
-        setCartItems(
-          cartItems.map((x) => (x.product === existItem.product ? item : x))
-        );
-      } else {
-        setCartItems([...cartItems, item]);
-      }
-
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const removeFromCartHandler = (id) => {
     const updatedCart = cartItems.filter((item) => item.product !== id);
@@ -62,9 +66,40 @@ const CartPage = () => {
     localStorage.setItem("cartItems", JSON.stringify(updatedCart));
   };
 
+  const updateCartItem = async (id, quantity) => {
+    try {
+      const { data } = await getProductById(id);
+      const item = {
+        product: data._id,
+        name: data.name,
+        image: data.images?.[0] || "https://via.placeholder.com/300",
+        price: data.price,
+        stock: data.stock,
+        qty: quantity,
+      };
+
+      setCartItems((prevItems) => {
+        const updatedItems = prevItems.map((x) =>
+          x.product === id ? item : x
+        );
+        localStorage.setItem("cartItems", JSON.stringify(updatedItems));
+        return updatedItems;
+      });
+    } catch (error) {
+      console.error("Error updating cart:", error);
+    }
+  };
+
   const checkoutHandler = () => {
     navigate("/login?redirect=/shipping");
   };
+
+  // Calculate totals
+  const itemsCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
+  const itemsPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.qty,
+    0
+  );
 
   return (
     <Row>
@@ -85,13 +120,13 @@ const CartPage = () => {
                   <Col md={3}>
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
-                  <Col md={2}>${item.price}</Col>
+                  <Col md={2}>${item.price.toFixed(2)}</Col>
                   <Col md={2}>
                     <Form.Control
                       as="select"
                       value={item.qty}
                       onChange={(e) =>
-                        addToCart(item.product, Number(e.target.value))
+                        updateCartItem(item.product, Number(e.target.value))
                       }
                     >
                       {[...Array(item.stock).keys()].map((x) => (
@@ -120,14 +155,7 @@ const CartPage = () => {
         <Card>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-                items
-              </h2>
-              $
-              {cartItems
-                .reduce((acc, item) => acc + item.qty * item.price, 0)
-                .toFixed(2)}
+              <h2>Subtotal ({itemsCount} items)</h2>${itemsPrice.toFixed(2)}
             </ListGroup.Item>
             <ListGroup.Item>
               <Button
